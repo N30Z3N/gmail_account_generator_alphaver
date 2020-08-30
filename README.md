@@ -8,7 +8,7 @@ python 3.8(https://www.python.org/downloads/release/python-380/)
 
 selenium webdriver(https://www.selenium.dev/documentation/en/getting_started/)
 
-piautogui(https://pyautogui.readthedocs.io/en/latest/install.html)
+pyautogui(https://pyautogui.readthedocs.io/en/latest/install.html)
  
  
 last update: 29/8/2020
