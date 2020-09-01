@@ -10,7 +10,7 @@ selenium webdriver(https://www.selenium.dev/documentation/en/getting_started/)
 
 pyautogui(https://pyautogui.readthedocs.io/en/latest/install.html)
 
-chromedriver(https://chromedriver.chromium.org)(always the lestest version)
+chromedriver(https://chromedriver.chromium.org) (always the lestest version)
 
  
  
