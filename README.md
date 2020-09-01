@@ -9,6 +9,9 @@ python 3.8(https://www.python.org/downloads/release/python-380/)
 selenium webdriver(https://www.selenium.dev/documentation/en/getting_started/)
 
 pyautogui(https://pyautogui.readthedocs.io/en/latest/install.html)
+
+chromedriver(https://chromedriver.chromium.org)(always the lestest version)
+
  
  
 last update: 29/8/2020
