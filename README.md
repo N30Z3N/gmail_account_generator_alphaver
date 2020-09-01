@@ -14,4 +14,4 @@ chromedriver(https://chromedriver.chromium.org)(always the lestest version)
 
  
  
-last update: 29/8/2020
+last update: 01/9/2020
