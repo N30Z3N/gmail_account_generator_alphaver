@@ -1,63 +1,69 @@
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
-import webbrowser
-from time import sleep
-import pickle
+import tkinter as tk
+from tkinter import filedialog, Text
 import os
+from tkinter import *
+import random                                                               #last_update::01/09/2020
+import pickle                                                               #next_update::03/09/2020
+import pyautogui
 import names
-import random
-import pickle
-
-###last_update::11/8/2020
-###next_update::10/9/2020
-
-driver = webdriver.Chrome("C:\\Users\\kalat\\OneDrive\\Documents\\cpp\\chromedriver.exe")
-password = ("")#<------
-x = str(random.random())
-email = names.get_full_name
-phone = ('')#<------
-url = ("https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp")
-message_url = ("https://www.bulksms.com/account/#!/received")
-ig_url = ("https://www.instagram.com/accounts/emailsignup/?hl=el")
-email = (names.get_first_name() , x)
-first_name = (names.get_first_name())
+from time import sleep
+import os
+###################
+######values######
+driver = webdriver.Chrome("C:\\Users\\kalat\\OneDrive\\Desktop\\chromedriver.exe")
+site1 = ("https://accounts.google.com/signup/v2/webcreateaccount?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail&hl=en-GB&dsh=S1778977194%3A1596965488824038&gmb=exp&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp")
+site2 = ('https://signup.live.com/signup?lcid=1033&wa=wsignin1.0&rpsnv=13&ct=1593596872&rver=7.0.6737.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26signup%3d1%26RpsCsrfState%3d082843c0-d9c2-5fb9-4cd5-927c107420df&id=292841&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=90015&lic=1&uaid=340efd9e096d47df80402c2698a0969d')
+password = "t1h2i3s5a6b9o04t"
+name1 = (names.get_first_name())
+__author__      = 'AKalattas'
 last_name = (names.get_last_name())
-year = ("2", "2", "2", "2", "2","2","2","2","2","2","2","2","2","2","2")
-day = ("19")
-month = ('f')
-sex = ('m')
-back_up_gmail = ("pemnomenos12@gmail.com")
-##########################################################################################################################################################################################
-def email_creation():
-    driver.get(url)
-    sleep(4.0)
-    driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div/div[1]/input').send_keys(first_name)
-    driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div[1]/div[1]/div[2]/div/div[1]/div/div[1]/input').send_keys(last_name)
-    driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div[1]/div[2]/div[1]/div/div[1]/div/div[1]/input').send_keys(email)
-    driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div[1]/div[3]/div[1]/div[1]/div/div/div[1]/div/div[1]/input').send_keys(password)
-    driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div[1]/div[3]/div[1]/div[3]/div/div/div[1]/div/div[1]/input').send_keys(password)
-    driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div[2]/div[1]/div/span/span').click()
-    sleep(4.0)
-    driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[2]/div/div[2]/div[1]/div/div[1]/input').send_keys(phone)
-    driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div').click()
-    sms = input("write here the ver code: ")
-    driver.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[2]/div/div[1]/div/div[1]/input").send_keys(sms)
-    driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[2]/div[2]/div[1]/div/div/button/div[2]').click()
-    sleep(3.0)
-    driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[2]/div[1]/div/div[1]/div/div[1]/input').send_keys(back_up_gmail)
-    driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/div[1]/div/div/div[1]/div/div[1]/input').send_keys("12")
-    driver.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/div[2]/div/div/div[2]/select").send_keys("Σ")
-    driver.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/div[3]/div/div/div[1]/div/div[1]/input").send_keys("1998")
-    driver.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[4]/div[1]/div/div[2]/select").send_keys("Γ")
-    driver.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]").click()
-    sleep(3.0)
-    driver.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[2]/div[2]/div[1]/div/div/button/div[2]").click()
-    sleep(3.0)
-    driver.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div/div/div[1]/span/div/div[3]/div[1]/div/div[1]/div/div").click()
-    driver.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div/div/div[1]/span/div/div[3]/div[2]/div/div[1]/div/div/div[2]/div/div/div").click()
-    driver.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div/div/div[2]/div/div[1]/div/span/span").click()
-    sleep(3.0)
-####################################
-email_creation()
+x = str(random.random())
+email = (name1 + last_name + x)
+phone = input('Whats your phone number')
+a = input('how many gmail accounts do you want?')
+pickle.dump( email, open('save.p', 'wb'))
+
+
+def gmail():
+    print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+    print('warning! this is agains the guidlines and rules of google llc')
+    print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+    for i in a:
+        driver.get(site1)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div[1]/div[1]/div[1]/div/div[1]/div/div[1]/input').send_keys(name1)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div[1]/div[1]/div[2]/div/div[1]/div/div[1]/input').send_keys(last_name)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div[1]/div[2]/div[1]/div/div[1]/div/div[1]/input').send_keys(email)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div[1]/div[3]/div[1]/div[1]/div/div/div[1]/div/div[1]/input').send_keys(password)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div[1]/div[3]/div[1]/div[3]/div/div/div[1]/div/div[1]/input').send_keys(password)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div[2]/div[1]/div/span/span').click()
+        sleep(3.0)  
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[2]/div/div[2]/div[1]/div/div[1]/input').send_keys(phone)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]').click()
+        ver_code = input('write here the verification code')
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[2]/div/div[1]/div/div[1]/input').send_keys(ver_code)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[2]/div[2]/div[1]/div/div/button/div[2]').click()
+        sleep(3.0)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/div[1]/div/div/div[1]/div/div[1]/input').send_keys('12')
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/div[2]/div/div/div[2]/select').send_keys('J')
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/div[3]/div/div/div[1]/div/div[1]/input').send_keys('1998')
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[4]/div[1]/div/div[2]/select').send_keys('m')
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]').click()
+        sleep(3.0)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[2]/div[2]/div[1]/div/div/button/div[2]').click()
+        sleep(3.0)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div/div/div[1]/span/div/div[3]/div[1]/div/div[1]/div/div/div[1]/div/div[2]').click()
+        sleep(3.0)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[1]/div[2]/form/div[2]/div/div/div/div[1]/span/div/div[3]/div[2]/div/div[1]/div/div/div[1]/div/div[2]').click()
+        sleep(3.0)
+        driver.find_element_by_xpath('/html/body/div[6]/div[2]/div/div[1]/div/span/span').click()
+        sleep(3.0)
+
+        k = pickle.load(open('save.p', 'rb'))
+        print('⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑')
+        print('___________________________________________________________________________________________________________________')
+        print('email: ' + k) 
+        print('password: ' + password)
+        print('___________________________________________________________________________________________________________________')
+        print('⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑⁑')
+gmail() 
