@@ -4,9 +4,9 @@ from tkinter import filedialog, Text
 import os
 from tkinter import *
 import random                                                               #last_update::01/09/2020
-import pickle                                                               #next_update::03/09/2020
-import pyautogui
-import names
+import pickle                                                               #next_update:: IDK :)
+import pyautogui                                                            #contact_me_at:: kalattas66@gmail.com
+import names                                                                #official_website_release:: 20/11/2020
 from time import sleep
 import os
 ###################
