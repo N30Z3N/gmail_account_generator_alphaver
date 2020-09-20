@@ -1,6 +1,5 @@
-# gmail_account_generator_alphaver
-alpha version of a gmail generator
- this is the aplha version of my gmail account generator, i am still working on it and i will continue working until the end of 2020. If you are interested working with me contact me on twitter @AntwniosKalatt1 or at kalattas66@gmail.com 
+# gmail_account_generator_alpha.ver
+alpha version of a gmail generator this is the alpha version of my gmail account generator.
 
 requirements:
 
@@ -12,6 +11,7 @@ pyautogui(https://pyautogui.readthedocs.io/en/latest/install.html)
 
 chromedriver(https://chromedriver.chromium.org) (always the lestest version)
 
- 
+
+
  
 last update: 01/9/2020
