@@ -1,11 +1,6 @@
-from selenium import webdriver
-import tkinter as tk
-from tkinter import filedialog, Text                                        #caonact me at:: kalattas66@gmail.com
+from selenium import webdriver                                              #caonact me at:: kalattas66@gmail.com
 import os                                                                   #official website:: akalattas.com
-from tkinter import *
 import random 
-import pickle
-import pyautogui
 import names
 from time import sleep
 
