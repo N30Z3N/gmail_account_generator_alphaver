@@ -11,6 +11,8 @@ pyautogui(https://pyautogui.readthedocs.io/en/latest/install.html)
 
 chromedriver(https://chromedriver.chromium.org) (always the lestest version)
 
+name library('https://pypi.org/project/namegenerator/')
+
 
 
  
