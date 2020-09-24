@@ -1,4 +1,4 @@
-# gmail_account_generator_alpha.ver
+# gmail_account_generator
 alpha version of a gmail generator this is the alpha version of my gmail account generator.
 
 requirements:
